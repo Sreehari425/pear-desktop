@@ -425,9 +425,9 @@
       }
     },
     "command-palette": {
-      "description": "Open a search palette for songs",
+      "description": "Open a command palette for app actions and quick song search",
       "name": "Command Palette",
-      "placeholder": "Search songs...",
+      "placeholder": "Search songs or commands...",
       "empty": "No results",
       "groups": {
         "songs": "Songs"

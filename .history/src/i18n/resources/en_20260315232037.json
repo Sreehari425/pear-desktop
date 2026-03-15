@@ -425,12 +425,20 @@
       }
     },
     "command-palette": {
-      "description": "Open a search palette for songs",
+      "description": "Open a command palette for app actions and quick song search",
       "name": "Command Palette",
-      "placeholder": "Search songs...",
+      "placeholder": "Search songs or commands...",
       "empty": "No results",
       "groups": {
+        "commands": "Commands",
         "songs": "Songs"
+      },
+      "commands": {
+        "play-pause": "Play/Pause",
+        "next": "Next",
+        "previous": "Previous",
+        "like": "Like",
+        "dislike": "Dislike"
       }
     },
     "compact-sidebar": {
