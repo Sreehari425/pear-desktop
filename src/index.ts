@@ -106,7 +106,13 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 // Ozone platform hint: Required for Wayland support
-app.commandLine.appendSwitch('ozone-platform-hint', 'auto');
+const isWaylandSession =
+  process.platform === 'linux' &&
+  (process.env.XDG_SESSION_TYPE === 'wayland' || !!process.env.WAYLAND_DISPLAY);
+app.commandLine.appendSwitch(
+  'ozone-platform-hint',
+  isWaylandSession ? 'wayland' : 'auto',
+);
 
 // SharedArrayBuffer: Required for downloader (@ffmpeg/core-mt)
 // OverlayScrollbar: Required for overlay scrollbars
