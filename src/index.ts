@@ -132,9 +132,9 @@ if (is.linux()) {
 
   // https://github.com/electron/electron/issues/15947
   if (await config.plugins.isEnabled('transparent-player')) {
-    disableHardwareAcceleration = true;
+    disableHardwareAcceleration = false;
     app.commandLine.appendSwitch('enable-transparent-visuals');
-    app.commandLine.appendSwitch('enable-unsafe-swiftshader');
+    // app.commandLine.appendSwitch('enable-unsafe-swiftshader');
   }
 
   // Overrides WM_CLASS for X11 to correspond to icon filename
