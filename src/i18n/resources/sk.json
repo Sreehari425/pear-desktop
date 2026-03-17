@@ -161,7 +161,8 @@
                 "default": "Základný",
                 "force-show": "Vynútiť zobrazenie",
                 "hide": "Skryť",
-                "label": "Like tlačítko"
+                "label": "Like tlačítko",
+                "swap": "Otočiť poradie tlačidiel „Páči sa mi“"
               },
               "remove-upgrade-button": "Odstrániť tlačidlo povýšiť",
               "theme": {
@@ -321,6 +322,22 @@
         "hostname": {
           "label": "Hostname"
         },
+        "https": {
+          "label": "HTTPS a Certifikáty",
+          "submenu": {
+            "cert": {
+              "dialogTitle": "Vybrať súbor certifikátu HTTPS",
+              "label": "Súbor certifikátov (.crt/.pem)"
+            },
+            "enable-https": {
+              "label": "Zapnúť HTTPS"
+            },
+            "key": {
+              "dialogTitle": "Vybrať súbor privátneho kľúča HTTPS",
+              "label": "Súbor privátneho kľúča (.key/.pem)"
+            }
+          }
+        },
         "port": {
           "label": "Port"
         }
@@ -474,8 +491,8 @@
           "label": "Text stavu",
           "submenu": {
             "application": "Počúvať {{applicationName}}",
-            "artist": "Aktuálne si prehráva {artist}",
-            "title": "Aktuálne si prehráva {song title}"
+            "artist": "Aktuálne počúva {artist}",
+            "title": "Aktuálne počúva {song title}"
           }
         }
       },
@@ -544,7 +561,7 @@
             "advanced": "Rozšírené",
             "enabled": "Povolené",
             "mode": "Časový režim",
-            "percent": "Percento",
+            "percent": "Percent",
             "seconds": "Sekundy"
           }
         },
@@ -613,7 +630,7 @@
         "connected-users": "Pripojení užívatelia",
         "disconnect": "Odpojiť Music Together",
         "empty-user": "Žiadni pripojení užívatelia",
-        "host": "Music Together Host",
+        "host": "Hudba spolu Hostiteľ",
         "join": "Pripojiť sa k Music Together",
         "permission": {
           "all": "Umožniť hosťom ovládať zoznam a prehrávač",
@@ -788,7 +805,7 @@
       }
     },
     "shortcuts": {
-      "description": "Povoľuje nastaviť globálne klávesové skratky pre prehrávanie (Prehrať/Pozastaviť/Ďalšie/Predošlé) a vypínať media OSD prepisovaním media kľúčov, zapne Ctrl/CMD + F pre vyhľadávanie, zapne Linux MPRIS podporu pre media kľúče a vlastné klávesové skratky pre pokročilých používateľov.",
+      "description": "Povoľuje nastaviť globálne klávesové skratky pre prehrávanie (Prehrať/Pozastaviť/Ďalšie/Predošlé) a vypínať media OSD prepisovaním media kľúčov, zapne Ctrl/CMD + F pre vyhľadávanie, zapne Linux MPRIS podporu pre media kľúče a vlastné klávesové skratky pre pokročilých používateľov",
       "menu": {
         "override-media-keys": "Prepísať Media Kľúče",
         "set-keybinds": "Globálne ovládanie skladieb"
@@ -821,14 +838,29 @@
     "synced-lyrics": {
       "description": "Poskytuje synchronizované texty k skladbám, pričom používa poskytovateľov ako LRClib.",
       "errors": {
-        "fetch": "⚠️\t\tPri získavaní textu sa vyskytla chyba. \n\tSkúste znova neskôr.",
+        "fetch": "⚠️\tPri získavaní textu sa vyskytla chyba.\n Skúste znova neskôr.",
         "not-found": "⚠️Pre túto skladbu nebol nájdený žiadny text."
       },
       "menu": {
+        "default-text-string": {
+          "label": "Predvolený charakter medzi textami",
+          "tooltip": "Vyberte predvolený charakter na použitie pre medzeru medzi textami"
+        },
         "line-effect": {
+          "label": "Čiarový efekt",
           "submenu": {
+            "fancy": {
+              "label": "Luxusné"
+            },
+            "focus": {
+              "label": "Zameranie"
+            },
             "offset": {
               "label": "Offset"
+            },
+            "scale": {
+              "label": "Mierka",
+              "tooltip": "Zväčšiť konkrétny riadok"
             }
           }
         },
@@ -840,7 +872,8 @@
           "none": {
             "label": "Žiadne",
             "tooltip": "Žiadny preferovaný poskytovateľ"
-          }
+          },
+          "tooltip": "Vybrať predvoleného poskytovateľa"
         }
       }
     },
@@ -848,11 +881,28 @@
       "name": "Dotykový Panel"
     },
     "transparent-player": {
-      "description": "Nastaví okno aplikácie ako priehľadné"
+      "description": "Nastaví okno aplikácie ako priehľadné",
+      "menu": {
+        "opacity": {
+          "submenu": {
+            "percent": "{{opacity}}%"
+          }
+        },
+        "type": {
+          "submenu": {
+            "none": "Žiadne/y"
+          }
+        }
+      }
+    },
+    "tuna-obs": {
+      "description": "Integrácia s OBS pluginom Tuna",
+      "name": "Tuna OBS"
     },
     "video-toggle": {
       "menu": {
         "align": {
+          "label": "Zarovnanie",
           "submenu": {
             "left": "Vľavo",
             "middle": "Stred",
@@ -860,6 +910,7 @@
           }
         },
         "mode": {
+          "label": "Mód",
           "submenu": {
             "disabled": "Vypnuté",
             "native": "Natívny prepínač"
