@@ -3,6 +3,8 @@ node_modules
 /pack
 .vscode/settings.json
 .idea
+pear-desktop/
+/pear-desktop
 
 .pnp.*
 .pnpm-store
