@@ -1,4 +1,11 @@
-/* eslint-disable stylistic/no-mixed-operators */
+/* oxlint-disable @stylistic/no-mixed-operators */
+import { IconCheckCircle } from '@mdui/icons/check-circle.js';
+import { IconChevronLeft } from '@mdui/icons/chevron-left.js';
+import { IconChevronRight } from '@mdui/icons/chevron-right.js';
+import { IconError } from '@mdui/icons/error.js';
+import { IconStarBorder } from '@mdui/icons/star-border.js';
+import { IconStar } from '@mdui/icons/star.js';
+import { IconWarning } from '@mdui/icons/warning.js';
 import {
   createEffect,
   createMemo,
@@ -12,16 +19,7 @@ import {
   Show,
   Switch,
 } from 'solid-js';
-
 import * as z from 'zod';
-
-import { IconChevronLeft } from '@mdui/icons/chevron-left.js';
-import { IconChevronRight } from '@mdui/icons/chevron-right.js';
-import { IconCheckCircle } from '@mdui/icons/check-circle.js';
-import { IconWarning } from '@mdui/icons/warning.js';
-import { IconError } from '@mdui/icons/error.js';
-import { IconStar } from '@mdui/icons/star.js';
-import { IconStarBorder } from '@mdui/icons/star-border.js';
 
 import { LitElementWrapper } from '@/solit';
 
@@ -32,9 +30,9 @@ import {
   ProviderNameSchema,
   type ProviderState,
 } from '../../providers';
-import { currentLyrics, lyricsStore, setLyricsStore } from '../store';
 import { _ytAPI } from '../index';
 import { config } from '../renderer';
+import { currentLyrics, lyricsStore, setLyricsStore } from '../store';
 
 import type { PlayerAPIEvents } from '@/types/player-api-events';
 

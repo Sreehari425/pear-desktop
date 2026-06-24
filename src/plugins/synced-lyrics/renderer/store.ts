@@ -1,5 +1,5 @@
-import { createStore } from 'solid-js/store';
 import { createMemo } from 'solid-js';
+import { createStore } from 'solid-js/store';
 
 import { getSongInfo } from '@/providers/song-info-front';
 

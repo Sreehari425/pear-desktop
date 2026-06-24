@@ -8,10 +8,6 @@ import {
 } from 'solid-js';
 import { type VirtualizerHandle, VList } from 'virtua/solid';
 
-import { LyricsPicker } from './components/LyricsPicker';
-
-import { selectors } from './utils';
-
 import {
   ErrorDisplay,
   LoadingKaomoji,
@@ -19,8 +15,9 @@ import {
   SyncedLine,
   PlainLyrics,
 } from './components';
-
+import { LyricsPicker } from './components/LyricsPicker';
 import { currentLyrics } from './store';
+import { selectors } from './utils';
 
 import type { LineLyrics, SyncedLyricsPluginConfig } from '../types';
 

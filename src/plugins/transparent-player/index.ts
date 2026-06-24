@@ -1,4 +1,8 @@
+import style from './style.css?inline';
+import { MaterialType, type TransparentPlayerConfig } from './types';
 import { t } from '@/i18n';
+import { createPlugin } from '@/utils';
+import { Platform } from '@/types/plugins';
 import { createPlugin } from '@/utils';
 
 import { onMenu } from './menu';
@@ -6,6 +10,8 @@ import { onMainLoad, onConfigChange, onMainStop } from './backend';
 import { MaterialType, type TransparentPlayerConfig } from './types';
 
 import style from './style.css?inline';
+
+import type { BrowserWindow } from 'electron';
 
 const defaultConfig: TransparentPlayerConfig = {
   enabled: false,
