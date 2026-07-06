@@ -130,9 +130,14 @@ if (is.linux()) {
 
   // https://github.com/electron/electron/issues/15947
   if (await config.plugins.isEnabled('transparent-player')) {
-    disableHardwareAcceleration = true;
     app.commandLine.appendSwitch('enable-transparent-visuals');
-    app.commandLine.appendSwitch('enable-unsafe-swiftshader');
+
+    // Wayland generally handles compositing better with GPU enabled.
+    // Keep the Linux/X11 workaround for software rendering only on non-Wayland sessions.
+    if (!isWaylandSession) {
+      disableHardwareAcceleration = true;
+      app.commandLine.appendSwitch('enable-unsafe-swiftshader');
+    }
   }
 
   // Overrides WM_CLASS for X11 to correspond to icon filename
