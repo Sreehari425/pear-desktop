@@ -1,7 +1,8 @@
-import { injectCpuTamer } from './scripts/cpu-tamer';
-import { injectRm3 } from './scripts/rm3';
 import { t } from '@/i18n';
 import { createPlugin } from '@/utils';
+
+import { injectCpuTamer } from './scripts/cpu-tamer';
+import { injectRm3 } from './scripts/rm3';
 
 export default createPlugin({
   name: () => t('plugins.performance-improvement.name'),

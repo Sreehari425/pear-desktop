@@ -1,5 +1,6 @@
-import { providerNames } from './providers';
 import { t } from '@/i18n';
+
+import { providerNames } from './providers';
 
 import type { SyncedLyricsPluginConfig } from './types';
 import type { MenuContext } from '@/types/contexts';

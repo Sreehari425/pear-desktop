@@ -1,21 +1,35 @@
-import { defaultConfig as defaults } from './defaults';
+import { blockers } from '@/plugins/do-not-track/types';
 import { DefaultPresetList, type Preset } from '@/plugins/downloader/types';
 
+import { defaultConfig as defaults } from './defaults';
+
+import type { TrackerBlockerConfig } from '@/plugins/do-not-track';
 import type { SyncedLyricsPluginConfig } from '@/plugins/synced-lyrics/types';
 
 // HACK: electron-store is ESM, but rolldown has a bug that prevents it from being imported properly in CommonJS context, so we have to use require here
+/* oxlint-disable typescript/no-require-imports */
 const Store = (
-  // oxlint-disable-next-line typescript/no-require-imports
   require('electron-store') as {
     default: typeof import('electron-store').default;
   }
 ).default;
+/* oxlint-enable typescript/no-require-imports */
 
 export type IStore = InstanceType<
   typeof import('conf').default<Record<string, unknown>>
 >;
 
 const migrations = {
+  '>=3.12.0'(store: IStore) {
+    const blockerConfig = store.get('plugins.adblocker') as TrackerBlockerConfig;
+    if (blockerConfig) {
+      if (!Object.values(blockers).includes(blockerConfig.blocker)) {
+        blockerConfig.blocker = blockers.InPlayer;
+      }
+      store.set('plugins.do-not-track', blockerConfig);
+      store.delete('plugins.adblocker');
+    }
+  },
   '>=3.10.0'(store: IStore) {
     const lyricGeniusConfig = store.get('plugins.lyrics-genius') as
       | {

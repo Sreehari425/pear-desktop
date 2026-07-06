@@ -259,3 +259,15 @@ div:has(> .lyrics-picker) {
     text-shadow: 0 0 0 var(--glow-color);
   }
 }
+
+.lyrics-picker mdui-button-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+}
+
+.lyrics-picker mdui-icon-error,
+.lyrics-picker mdui-icon-check-circle,
+.lyrics-picker mdui-icon-warning {
+  font-size: 24px;
+}

@@ -2,13 +2,14 @@ import { toKeyEvent } from 'keyboardevent-from-electron-accelerator';
 import keyEventAreEqual from 'keyboardevents-areequal';
 import { render } from 'solid-js/web';
 
-import { PictureInPictureButton } from './templates/picture-in-picture-button';
 import { t } from '@/i18n';
 import {
   isMusicOrVideoTrack,
   isPlayerMenu,
 } from '@/plugins/utils/renderer/check';
 import { getSongMenu } from '@/providers/dom-elements';
+
+import { PictureInPictureButton } from './templates/picture-in-picture-button';
 
 import type { PictureInPicturePluginConfig } from './index';
 import type { RendererContext } from '@/types/contexts';

@@ -10,8 +10,9 @@ import { pinyin } from 'pinyin-pro';
 import { render } from 'solid-js/web';
 import { detect } from 'tinyld';
 
-import { LyricsRenderer, setIsVisible } from './renderer';
 import { waitForElement } from '@/utils/wait-for-element';
+
+import { LyricsRenderer, setIsVisible } from './renderer';
 
 export const selectors = {
   head: '#tabsContent > .tab-header:nth-of-type(2)',

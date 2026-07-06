@@ -49,13 +49,13 @@ export const ErrorDisplay = (props: ErrorDisplayProps) => {
           isDisabled: false,
           style: 'STYLE_DEFAULT',
           text: {
-            simpleText: t('plugins.synced-lyrics.refetch-btn.normal')
+            simpleText: t('plugins.synced-lyrics.refetch-btn.normal'),
           },
         }}
         onClick={() => retrySearch(lyricsStore.provider, getSongInfo())}
         style={{
           'margin-top': '1em',
-          'width': '100%'
+          'width': '100%',
         }}
       />
     </div>

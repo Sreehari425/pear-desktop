@@ -1,8 +1,10 @@
+import { createRenderer } from '@/utils';
+import { waitForElement } from '@/utils/wait-for-element';
+
+import { disposeReactiveRoot } from './reactive-root';
 import { setConfig, setCurrentTime } from './renderer';
 import { fetchLyrics } from './store';
 import { selectors, tabStates } from './utils';
-import { createRenderer } from '@/utils';
-import { waitForElement } from '@/utils/wait-for-element';
 
 import type { SyncedLyricsPluginConfig } from '../types';
 import type { SongInfo } from '@/providers/song-info';
@@ -81,5 +83,9 @@ export const renderer = createRenderer<
     ctx.ipc.on('peard:update-song-info', (info: SongInfo) => {
       fetchLyrics(info);
     });
+  },
+
+  stop() {
+    disposeReactiveRoot();
   },
 });

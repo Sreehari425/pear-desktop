@@ -1,5 +1,6 @@
-import { HANGUL_FILLER } from './constants';
 import { APPLICATION_NAME } from '@/i18n';
+
+import { HANGUL_FILLER } from './constants';
 
 import type { DiscordPluginConfig } from './index';
 import type { SongInfo } from '@/providers/song-info';

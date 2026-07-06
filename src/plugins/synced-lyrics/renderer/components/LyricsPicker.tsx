@@ -15,6 +15,7 @@ import {
   Match,
   onCleanup,
   onMount,
+  runWithOwner,
   type Setter,
   Show,
   Switch,
@@ -31,6 +32,7 @@ import {
   type ProviderState,
 } from '../../providers';
 import { _ytAPI } from '../index';
+import { reactiveOwner } from '../reactive-root';
 import { config } from '../renderer';
 import { currentLyrics, lyricsStore, setLyricsStore } from '../store';
 
@@ -40,9 +42,9 @@ const LocalStorageSchema = z.object({
   provider: ProviderNameSchema,
 });
 
-export const providerIdx = createMemo(() =>
-  providerNames.indexOf(lyricsStore.provider),
-);
+export const providerIdx = runWithOwner(reactiveOwner, () =>
+  createMemo(() => providerNames.indexOf(lyricsStore.provider)),
+)!;
 
 const shouldSwitchProvider = (providerData: ProviderState) => {
   if (providerData.state === 'error') return true;
